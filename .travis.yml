@@ -14,9 +14,11 @@ git:
 jobs:
   include:
   - env: CMD="make ci"
-  - env: CMD="make e2e delpoytool=operator"
+  - env: CMD="make e2e"
+         DEPLOY_ARGS="--delpoytool operator"
          RELEASE=true
-  - env: CMD="make e2e deploytool=helm"
+  - env: CMD="make e2e"
+         DEPLOY_ARGS="--delpoytool helm"
 
 install:
   - sudo apt-get install moreutils # make ts available
